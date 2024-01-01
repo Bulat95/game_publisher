@@ -1,0 +1,31 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="GameDeveloper"
+run/main_scene="res://scene/main_menu_scene.tscn"
+config/features=PackedStringArray("4.1", "Mobile")
+
+[autoload]
+
+global_script_time="*res://global_script/global_script_time.gd"
+global_script_project="*res://global_script/global_script_project.gd"
+global_script_load_game="*res://global_script/global_script_load_game.gd"
+global_script_load_tech="*res://global_script/global_script_load_techno.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
+[rendering]
+
+renderer/rendering_method="mobile"

@@ -1,0 +1,156 @@
+[gd_scene load_steps=11 format=3 uid="uid://b6ud3xpt5yqju"]
+
+[ext_resource type="Script" path="res://script/main_level_script/level_menu_button_script.gd" id="1_nurn0"]
+[ext_resource type="Script" path="res://script/time_view_label_script/time_view_label_script.gd" id="1_uiamv"]
+[ext_resource type="Script" path="res://script/time_view_label_script/day_view_label_script.gd" id="2_l6nf1"]
+[ext_resource type="Script" path="res://script/main_level_script/level_start_project_script.gd" id="2_y8kqv"]
+[ext_resource type="Script" path="res://script/time_view_label_script/month_view_label_script.gd" id="3_3k1f1"]
+[ext_resource type="Script" path="res://script/time_view_label_script/year_view_label_script.gd" id="4_k6kug"]
+[ext_resource type="Script" path="res://script/name_product_script.gd" id="7_es0sa"]
+[ext_resource type="Script" path="res://script/textures_script.gd" id="8_pa4fo"]
+[ext_resource type="Script" path="res://script/level_information_for_techno_script.gd" id="9_sijkw"]
+[ext_resource type="Script" path="res://script/text_info_technologies_script.gd" id="10_pdh26"]
+
+[node name="main_level_scene" type="Node2D"]
+
+[node name="main_level_panel" type="Panel" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 1920.0
+offset_bottom = 1080.0
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="level_menu_button" type="Button" parent="main_level_panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.9
+anchor_top = 0.0592593
+anchor_right = 0.9625
+anchor_bottom = 0.111111
+offset_right = 8.0
+offset_bottom = 8.0
+text = "MENU"
+script = ExtResource("1_nurn0")
+metadata/_edit_use_anchors_ = true
+
+[node name="level_start_project_button" type="Button" parent="main_level_panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.766667
+anchor_top = 0.0592593
+anchor_right = 0.8665
+anchor_bottom = 0.118259
+offset_right = 0.32
+offset_bottom = 0.279995
+text = "START NEW PROJECT"
+script = ExtResource("2_y8kqv")
+metadata/_edit_use_anchors_ = true
+
+[node name="level_time_label_panel" type="Panel" parent="."]
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 384.0
+offset_bottom = 128.0
+
+[node name="hour_view_label" type="Label" parent="level_time_label_panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8
+anchor_right = 0.99375
+anchor_bottom = 1.0
+offset_right = -3.05176e-05
+horizontal_alignment = 1
+script = ExtResource("1_uiamv")
+metadata/_edit_use_anchors_ = true
+
+[node name="day_view_label" type="Label" parent="level_time_label_panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.59375
+anchor_right = 0.8
+anchor_bottom = 1.0
+offset_right = -3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_l6nf1")
+metadata/_edit_use_anchors_ = true
+
+[node name="month_view_label" type="Label" parent="level_time_label_panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_right = 0.596875
+anchor_bottom = 1.0
+offset_right = 1.0
+script = ExtResource("3_3k1f1")
+metadata/_edit_use_anchors_ = true
+
+[node name="year_view_label" type="Label" parent="level_time_label_panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.4
+anchor_bottom = 1.0
+script = ExtResource("4_k6kug")
+metadata/_edit_use_anchors_ = true
+
+[node name="level_info_product_panel" type="Panel" parent="."]
+offset_left = 832.0
+offset_top = 64.0
+offset_right = 1088.0
+offset_bottom = 128.0
+
+[node name="name_product" type="Label" parent="level_info_product_panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("7_es0sa")
+metadata/_edit_use_anchors_ = true
+
+[node name="level_texture_panel" type="Panel" parent="."]
+offset_left = 128.0
+offset_top = 192.0
+offset_right = 1792.0
+offset_bottom = 960.0
+
+[node name="texture" type="TextureRect" parent="level_texture_panel"]
+layout_mode = 0
+offset_left = 416.0
+offset_right = 1248.0
+offset_bottom = 768.0
+script = ExtResource("8_pa4fo")
+
+[node name="Button" type="Button" parent="level_texture_panel"]
+layout_mode = 0
+offset_left = 1408.0
+offset_top = 64.0
+offset_right = 1600.0
+offset_bottom = 128.0
+text = "поменять текстуру"
+
+[node name="level_information_for_techno" type="Panel" parent="."]
+offset_left = 696.0
+offset_top = 448.0
+offset_right = 1224.0
+offset_bottom = 712.0
+script = ExtResource("9_sijkw")
+
+[node name="level_information_for_techno_button" type="Button" parent="level_information_for_techno"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 192.0
+offset_right = 392.0
+offset_bottom = 240.0
+text = "ОК"
+
+[node name="text_info_technologies" type="Label" parent="level_information_for_techno"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("10_pdh26")
+
+[connection signal="pressed" from="level_texture_panel/Button" to="level_texture_panel/texture" method="_on_button_pressed"]
+[connection signal="pressed" from="level_information_for_techno/level_information_for_techno_button" to="level_information_for_techno" method="_on_level_information_for_techno_button_pressed"]

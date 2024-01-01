@@ -1,0 +1,71 @@
+[gd_scene load_steps=2 format=3 uid="uid://cc63cob7k6sev"]
+
+[ext_resource type="Script" path="res://script/main_board_start_button_script.gd" id="1_bq1oo"]
+
+[node name="main_board_scene" type="Node2D"]
+
+[node name="main_board_panel" type="Panel" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+metadata/_edit_use_anchors_ = true
+
+[node name="main_board_label_enter_name" type="Label" parent="main_board_panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.067
+anchor_right = 0.6
+anchor_bottom = 0.119
+offset_top = -8.36
+offset_bottom = -0.520004
+text = "ВВЕДИТЕ НАЗВАНИЕ ИГРЫ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="main_board_start_button" type="Button" parent="main_board_panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.83
+anchor_right = 0.6
+anchor_bottom = 0.889
+offset_top = -0.400024
+offset_bottom = -0.120056
+text = "START"
+script = ExtResource("1_bq1oo")
+metadata/_edit_use_anchors_ = true
+
+[node name="product_name" type="LineEdit" parent="main_board_panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.177778
+anchor_right = 0.598072
+anchor_bottom = 0.230333
+offset_right = 3.7025
+offset_bottom = 7.24
+placeholder_text = "TEXT"
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="genre_select" type="OptionButton" parent="main_board_panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.414815
+anchor_right = 0.6
+anchor_bottom = 0.474519
+offset_bottom = -0.480011
+metadata/_edit_use_anchors_ = true
+
+[node name="type_select" type="OptionButton" parent="main_board_panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.296296
+anchor_right = 0.6
+anchor_bottom = 0.356
+offset_bottom = -0.480011
+metadata/_edit_use_anchors_ = true
+
+[connection signal="item_selected" from="main_board_panel/type_select" to="main_board_panel/main_board_start_button" method="_on_type_select_item_selected"]
