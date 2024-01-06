@@ -1,14 +1,15 @@
 extends Label
 
+var list = global_script_load_tech.techno_list
 
-var list_techno = global_script_load_tech.techno_list
+var trig :bool = false
+var days_is_activate = 0
 
-var days_last_techno :int
-var index :int
-
-func _process(delta):
-	days_last_techno = global_script_time.allDays
-	index = days_last_techno/5
-	var game = list_techno[index]
-	text = game.name
-
+func _physics_process(delta):
+	text = list[global_script_time.allDays / 10].name
+	if global_script_time.allDays % 10 == 0 and trig == false:
+		global_script_load_tech.trigger_it_was_activate = true
+		trig = true
+		days_is_activate = global_script_time.allDays
+	if days_is_activate < global_script_time.allDays + 3:
+		trig = true

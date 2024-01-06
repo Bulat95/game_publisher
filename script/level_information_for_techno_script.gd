@@ -14,4 +14,8 @@ func _on_level_information_for_techno_button_pressed():
 
 func _physics_process(delta):
 	panel.visible = global_script_load_tech.trigger_it_was_activate
-	global_script_time.pause = global_script_load_tech.trigger_it_was_activate
+	if panel.visible:
+		global_script_time.pause = true
+#		if global_script_load_tech.trigger_it_was_activate == false:
+#			global_script_load_tech.trigger_it_was_activate = false
+	

@@ -4,7 +4,7 @@ var techno_list = []
 
 var techno_info_text :String
 var techno_info_number :int
-var trigger_it_was_activate :bool = true
+var trigger_it_was_activate :bool = false
 
 func _ready() -> void:
 	techno_list.append(Techno.new(0, "Ограны управления устройством", 1980, 1, 1))
