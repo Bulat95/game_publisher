@@ -2,6 +2,8 @@ extends Node
 
 var techno_list = []
 
+var techno_list_add_queue = []
+
 var techno_info_text :String
 var techno_info_number :int
 var trigger_it_was_activate :bool = false

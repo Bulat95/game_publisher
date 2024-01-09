@@ -5,6 +5,7 @@ var months: int = 1
 var days: int = 1
 var hours: int = 1
 var allDays: int = 1
+var allHours: int = 1
 
 
 var coefficientForTimer: int = 1
@@ -23,6 +24,7 @@ func _physics_process(delta):
 		toggle_pause(true)
 	if !pause:
 		hours += 1
+		allHours += 1
 		if hours >= 24:
 			hours -= 24
 			days += 1
